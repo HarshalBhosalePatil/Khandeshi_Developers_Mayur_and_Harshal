@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assistant</title>
+  <!-- Modern font stack; system fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Main layout: sidebar (optional) + chat area -->
+  <div class="app">
+    <!-- Header with title and optional controls -->
+    <header class="header">
+      <h1 class="header__title">AI Assistant</h1>
+      <p class="header__subtitle">Powered by LangChain & OpenRouter</p>
+    </header>
+
+    <!-- Scrollable conversation area -->
+    <main class="chat" id="chat" role="log" aria-live="polite">
+      <!-- Welcome message when there's no history -->
+      <div class="chat__welcome" id="welcome">
+        <p>Send a message to start the conversation. Your chat history is kept in memory for this session.</p>
+      </div>
+      <!-- Messages are appended here by JavaScript -->
+      <div class="chat__messages" id="messages"></div>
+    </main>
+
+    <!-- Input area: text input + send button -->
+    <form class="input-area" id="chatForm" role="form" aria-label="Chat input">
+      <label for="userInput" class="sr-only">Your message</label>
+      <textarea
+        id="userInput"
+        class="input-area__input"
+        name="message"
+        placeholder="Type your message..."
+        rows="1"
+        maxlength="4000"
+        required
+      ></textarea>
+      <button type="submit" class="input-area__submit" id="sendBtn" aria-label="Send message">
+        <span class="input-area__submit-text">Send</span>
+        <span class="input-area__submit-icon" aria-hidden="true">→</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- Screen reader only text for live region updates -->
+  <div class="sr-only" id="status" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
