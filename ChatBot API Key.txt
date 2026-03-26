@@ -1,2 +1,0 @@
-OpenRouter : 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
-Groq : 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

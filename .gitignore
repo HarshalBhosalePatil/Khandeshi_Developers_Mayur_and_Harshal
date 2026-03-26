@@ -1,16 +1,47 @@
-# Environment
+# Python bytecode
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+
 venv/
 .venv/
-.env
-*.pyc
-__pycache__/
-.pytest_cache/
-*.egg-info/
-dist/
-build/
+env/
+ENV/
 
-# IDE
-.idea/
+# Environment variables / secrets
+
+.env
+.env.*
+*.env
+ChatBot API Key.txt
+
+# Build / distribution
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Python test cache
+
+.pytest_cache/
+
+# Logs
+
+*.log
+
+# VS Code
+
 .vscode/
-*.swp
-*.swo
+
+# JetBrains IDE
+
+.idea/
+
+# OS files
+
+.DS_Store
+Thumbs.db
