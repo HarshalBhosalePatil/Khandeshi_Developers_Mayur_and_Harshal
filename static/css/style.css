@@ -60,7 +60,14 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+.my-icon{
+  width:50 px;
+  height:50 px;
+  position:absolute;
+  top:10 px;
+  right:10 px;
+  width: 40 px;
+}
 /* Screen reader only - keep for accessibility */
 .sr-only {
   position: absolute;
